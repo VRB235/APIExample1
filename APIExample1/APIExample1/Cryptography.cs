@@ -34,7 +34,7 @@ namespace APIRESTOficinaVirtual.Utils
 
             return tokenHandler.WriteToken(createdToken);
         }
-        public static string GenerateToken(string documentId)
+        public static string GenerateToken(string documentId, string phone)
         {
             var secretKey = _configuration.GetValue<string>("SecretKey");
             var key = Encoding.ASCII.GetBytes(secretKey);
@@ -42,6 +42,7 @@ namespace APIRESTOficinaVirtual.Utils
             var claims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier, documentId),
+                new Claim(ClaimTypes.MobilePhone, phone),
             };
 
             ClaimsIdentity claimIdentity = new ClaimsIdentity(claims);

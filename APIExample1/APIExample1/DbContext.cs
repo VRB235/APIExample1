@@ -15,11 +15,13 @@ namespace APIExample1
                 new User
                 {
                     DocumentId = "V24000001",
+                    Phone = "04142031975",
                     Password = "Hola1234*"
                 },
                 new User
                 {
                     DocumentId = "V24000002",
+                    Phone = "04145377035",
                     Password = "Hola1234*"
                 }
             };
